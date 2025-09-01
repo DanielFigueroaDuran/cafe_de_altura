@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { createContext, useState } from "react";
-import { getlocalStorage } from '../utils/data.ts';
+import { getlocalStorage, type Products } from '../utils/data.ts';
 
 type CoffeContextType = {
-    coffees: string[];
-    addCoffee: (coffee: string) => void;
+    products: Products[],
+    setProducts: React.Dispatch<React.SetStateAction<Products[]>>
 };
 
 type CoffeProviderProps = {
@@ -16,7 +16,7 @@ export const CoffeContext = createContext<CoffeContextType | undefined>(undefine
 
 const CoffeProvider = ({ children }: CoffeProviderProps) => {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<Products[]>([]);
     const [cart, setCart] = useState(getlocalStorage());
     const [selected, setSelected] = useState('free');
     const [productSeleted, setProductSeleted] = useState([]);
@@ -47,7 +47,24 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
     // }
 
     return (
-        <CoffeContext.Provider value={{ products, setProducts, cart, setCart, selected, setSelected, handleClick, total, productSeleted, setProductSeleted, totalSummry, setTotalSummry, isloading }}>
+        <CoffeContext.Provider value={
+            {
+                products,
+                setProducts,
+                //    cart,
+                //  setCart,
+                //selected,
+                //setSelected,
+                //      handleClick,
+                //        total,
+                // productSeleted,
+                // setProductSeleted,
+                //totalSummry,
+                //setTotalSummry,
+                //isloading
+            }
+        }
+        >
             {children}
         </CoffeContext.Provider>
     )
