@@ -27,7 +27,7 @@ export type Products = {
 export const getlocalStorage = (): Products[] => {
     const data = localStorage.getItem("product");
     if (data) {
-        return JSON.parse(data);
+        return JSON.parse(data) as Products[];
     } else {
         return [];
     }
