@@ -1,16 +1,16 @@
 import React, { useContext, useEffect } from 'react'
 import { createContext, useState } from "react";
-import { getlocalStorage, type Products } from '../utils/data.ts';
+import { getlocalStorage, products as initialProduct, type Product } from '../utils/data.ts';
 
 type CoffeContextType = {
-    products: Products[],
-    setProducts: React.Dispatch<React.SetStateAction<Products[]>>,
-    cart: Products[],
-    setCart: React.Dispatch<React.SetStateAction<Products[]>>,
+    products: Product[],
+    setProducts: React.Dispatch<React.SetStateAction<Product[]>>,
+    cart: Product[],
+    setCart: React.Dispatch<React.SetStateAction<Product[]>>,
     selected: string,
     setSelected: React.Dispatch<React.SetStateAction<string>>,
-    productSelected: Products[],
-    setProductSelected: React.Dispatch<React.SetStateAction<Products[]>>
+    productSelected: Product[],
+    setProductSelected: React.Dispatch<React.SetStateAction<Product[]>>
     isloading: boolean
 };
 
@@ -23,35 +23,35 @@ export const CoffeContext = createContext<CoffeContextType | undefined>(undefine
 
 const CoffeProvider = ({ children }: CoffeProviderProps) => {
 
-    const [products, setProducts] = useState<Products[]>([]);
-    const [cart, setCart] = useState<Products[]>(getlocalStorage());
+    const [products, setProducts] = useState<Product[]>(initialProduct);
+    const [cart, setCart] = useState<Product[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
-    const [productSelected, setProductSelected] = useState<Products[]>([]);
-    const [totalSummry, setTotalSummry] = useState([]);
+    const [productSelected, setProductSelected] = useState<Product[]>([]);
+    //const [totalSummry, setTotalSummry] = useState([]);
     const [isloading, setIsloading] = useState<boolean>(false);
 
-    //  const total = cart.reduce((acc, coffe) => acc + coffe.price * coffe.quantity, 0);
+    const total = cart.reduce((acc, coffe) => acc + coffe.price * coffe.quanty, 0);
     //const apiCoffe = `https://cafe-de-altura.vercel.app/api/products`;
 
-    // useEffect(() => {
-    //     getData(apiCoffe).then(coffe => setProducts(coffe));
-    //     localStorage.setItem("product", JSON.stringify(cart));
-    // }, [cart]);
+    useEffect(() => {
+        localStorage.setItem("product", JSON.stringify(cart));
+    }, [cart]);
 
-    // const handleClick = (product) => {
-    //     setIsloading(true);
 
-    //     setTimeout(() => {
-    //         setIsloading(false);
-    //     }, 1000);
+    const handleClick = (product: Product) => {
+        setIsloading(true);
 
-    //     const productRepeat = cart.find((coffe) => coffe._id === product._id);
-    //     if (productRepeat) {
-    //         setCart(cart.map((item) => item._id === product._id ? { ...product, quantity: productRepeat.quantity + 1 } : item))
-    //     } else {
-    //         setCart([...cart, { quantity: 1, ...product }]);
-    //     };
-    // }
+        setTimeout(() => {
+            setIsloading(false);
+        }, 1000);
+
+        const productRepeat = cart.find((coffe) => coffe.id === product.id);
+        if (productRepeat) {
+            setCart(cart.map((item) => item.id === product.id ? { ...product, quantity: productRepeat.quanty + 1 } : item))
+        } else {
+            setCart([...cart, { quantity: 1, ...product }]);
+        };
+    }
 
     return (
         <CoffeContext.Provider value={

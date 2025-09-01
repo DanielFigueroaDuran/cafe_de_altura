@@ -7,7 +7,7 @@ import coffeeMonteBello from "../assets/img/coffeeMonteBello.png";
 import coffeeEtiopia from "../assets/img/coffeeEtiopia.png";
 import coffeeLaCasita from "../assets/img/coffeeLaCasita.png";
 
-export type Products = {
+export type Product = {
     id: string,
     brand: string,
     price: number,
@@ -24,10 +24,10 @@ export type Products = {
 //     return data.products;
 // }
 
-export const getlocalStorage = (): Products[] => {
+export const getlocalStorage = (): Product[] => {
     const data = localStorage.getItem("product");
     if (data) {
-        return JSON.parse(data) as Products[];
+        return JSON.parse(data) as Product[];
     } else {
         return [];
     }
@@ -43,7 +43,7 @@ export const getlocalStorageForm = () => {
 };
 
 
-export const products: Products[] = [
+export const products: Product[] = [
     {
         id: "6474ee0ebfd170bc8af15bdd",
         brand: "Costa Rica Tarrazú",
