@@ -13,7 +13,7 @@ type CoffeContextType = {
     isloading: boolean,
     handleClick: (product: Product) => void,
     total: number,
-    totalSummry: number
+    //totalSummry: number
 };
 
 type CoffeProviderProps = {
@@ -29,7 +29,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
     const [cart, setCart] = useState<Product[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
     const [productSelected, setProductSelected] = useState<Product[]>([]);
-    const [totalSummry, setTotalSummry] = useState([]);
+    //const [totalSummry, setTotalSummry] = useState([]);
     const [isloading, setIsloading] = useState<boolean>(false);
 
     const total = cart.reduce((acc, coffe) => acc + coffe.price * coffe.quantity, 0);
@@ -70,7 +70,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
                 setProductSelected,
                 handleClick,
                 total,
-                totalSummry,
+                //totalSummry,
                 //setTotalSummry,
                 isloading
             }
