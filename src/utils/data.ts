@@ -13,7 +13,7 @@ export type Product = {
     price: number,
     img_url: string,
     available: boolean,
-    quanty: number
+    quantity: number
 };
 
 
@@ -50,7 +50,7 @@ export const products: Product[] = [
         price: 9.00,
         img_url: costaRica,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15bde",
@@ -58,7 +58,7 @@ export const products: Product[] = [
         price: 9,
         img_url: colombia,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15bdf",
@@ -66,7 +66,7 @@ export const products: Product[] = [
         price: 9,
         "img_url": laos,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15be0",
@@ -74,7 +74,7 @@ export const products: Product[] = [
         price: 9,
         img_url: etiopia,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15be1",
@@ -82,7 +82,7 @@ export const products: Product[] = [
         price: 15,
         img_url: coffeeMonteBello,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15be2",
@@ -90,7 +90,7 @@ export const products: Product[] = [
         price: 17,
         img_url: coffeeEtiopia,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15be3",
@@ -98,7 +98,7 @@ export const products: Product[] = [
         price: 12,
         img_url: coffeeMonteBello,
         available: true,
-        quanty: 1
+        quantity: 1
     },
     {
         id: "6474ee0ebfd170bc8af15be4",
@@ -106,6 +106,6 @@ export const products: Product[] = [
         price: 9,
         img_url: coffeeLaCasita,
         available: false,
-        quanty: 1
+        quantity: 1
     }
 ];

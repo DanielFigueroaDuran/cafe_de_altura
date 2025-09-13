@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { getlocalStorage, products as initialProduct, type Product } from '../utils/data.ts';
 
 type CoffeContextType = {
@@ -11,7 +10,10 @@ type CoffeContextType = {
     setSelected: React.Dispatch<React.SetStateAction<string>>,
     productSelected: Product[],
     setProductSelected: React.Dispatch<React.SetStateAction<Product[]>>
-    isloading: boolean
+    isloading: boolean,
+    handleClick: (product: Product) => void,
+    total: number,
+    totalSummry: number
 };
 
 type CoffeProviderProps = {
@@ -27,16 +29,15 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
     const [cart, setCart] = useState<Product[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
     const [productSelected, setProductSelected] = useState<Product[]>([]);
-    //const [totalSummry, setTotalSummry] = useState([]);
+    const [totalSummry, setTotalSummry] = useState([]);
     const [isloading, setIsloading] = useState<boolean>(false);
 
-    const total = cart.reduce((acc, coffe) => acc + coffe.price * coffe.quanty, 0);
+    const total = cart.reduce((acc, coffe) => acc + coffe.price * coffe.quantity, 0);
     //const apiCoffe = `https://cafe-de-altura.vercel.app/api/products`;
 
     useEffect(() => {
         localStorage.setItem("product", JSON.stringify(cart));
     }, [cart]);
-
 
     const handleClick = (product: Product) => {
         setIsloading(true);
@@ -45,11 +46,14 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
             setIsloading(false);
         }, 1000);
 
-        const productRepeat = cart.find((coffe) => coffe.id === product.id);
+        const productRepeat = cart.find((coffe) => coffe.id === product.id);;
         if (productRepeat) {
-            setCart(cart.map((item) => item.id === product.id ? { ...product, quantity: productRepeat.quanty + 1 } : item))
+            setCart(cart.map((item) => item.id === product.id
+                ? { ...product, quantity: productRepeat.quantity + 1 }
+                : item)
+            )
         } else {
-            setCart([...cart, { quantity: 1, ...product }]);
+            setCart([...cart, { ...product, quantity: 1 }]);
         };
     }
 
@@ -64,9 +68,9 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
                 setSelected,
                 productSelected,
                 setProductSelected,
-                //      handleClick,
-                //        total,
-                //totalSummry,
+                handleClick,
+                total,
+                totalSummry,
                 //setTotalSummry,
                 isloading
             }
