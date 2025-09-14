@@ -26,7 +26,6 @@ export const CoffeContext = createContext<CoffeContextType | undefined>(undefine
 //const coffeeProduct = JSON.parse(localStorage.getItem("coffeStorage")) || [];
 
 const CoffeProvider = ({ isMobile, children }: CoffeProviderProps) => {
-
     const [products, setProducts] = useState<Product[]>(initialProduct);
     const [cart, setCart] = useState<Product[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
@@ -40,6 +39,7 @@ const CoffeProvider = ({ isMobile, children }: CoffeProviderProps) => {
     useEffect(() => {
         localStorage.setItem("product", JSON.stringify(cart));
     }, [cart]);
+
 
     const handleClick = (product: Product) => {
         setIsloading(true);

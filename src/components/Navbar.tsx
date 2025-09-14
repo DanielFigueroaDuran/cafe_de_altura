@@ -9,7 +9,11 @@ import Button from './Button';
 const Navbar = () => {
     const { cart, isMobile } = useCoffe();
     console.log(isMobile);
+
+
+
     const itemsQuantity = cart.reduce((acc, coffe) => acc + coffe.quantity, 0);
+
     console.log(itemsQuantity);
 
     return (
