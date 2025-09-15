@@ -2,7 +2,6 @@ import { createContext, useState, useEffect } from "react";
 import { getlocalStorage, products as initialProduct, type Product } from '../utils/data.ts';
 
 type CoffeContextType = {
-    isMobile: boolean,
     products: Product[],
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>,
     cart: Product[],
@@ -18,14 +17,13 @@ type CoffeContextType = {
 };
 
 type CoffeProviderProps = {
-    isMobile: boolean,
     children: React.ReactNode;
 };
 
 export const CoffeContext = createContext<CoffeContextType | undefined>(undefined);
 //const coffeeProduct = JSON.parse(localStorage.getItem("coffeStorage")) || [];
 
-const CoffeProvider = ({ isMobile, children }: CoffeProviderProps) => {
+const CoffeProvider = ({ children }: CoffeProviderProps) => {
     const [products, setProducts] = useState<Product[]>(initialProduct);
     const [cart, setCart] = useState<Product[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
@@ -62,7 +60,6 @@ const CoffeProvider = ({ isMobile, children }: CoffeProviderProps) => {
     return (
         <CoffeContext.Provider value={
             {
-                isMobile,
                 products,
                 setProducts,
                 cart,
