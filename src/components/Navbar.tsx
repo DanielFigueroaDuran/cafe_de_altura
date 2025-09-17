@@ -23,9 +23,7 @@ const Navbar = () => {
             <header className='flex justify-between  items-center py-3 px-10  
                 text-[#fff] bg-[#2b2a2b]  w-full fixed z-[1]' >
                 <Logo />
-                <div className="hidden">
-                    <NavLink />
-                </div>
+
                 <div className="lg:hidden">
                     <button onClick={() => setIsOpen(!false)}>
                         {isOpen
@@ -33,10 +31,11 @@ const Navbar = () => {
                             : <HiMenu />
                         }
                     </button>
-
                 </div>
 
-
+                <div className='hidden'>
+                    <NavLink />
+                </div>
                 {/* <div className='flex items-center gap-2 my-1 font-semibold text-sm leading-4'>
                     <div className='w-[18px] h-[18px] bg-bottom bg-cover bg-no-repeat '>
                         <img src={phone} alt="phone" />
@@ -45,8 +44,8 @@ const Navbar = () => {
                     <Button
                         label={"Iniciar sesión"}
                         className={"bg-[#515051] py-3 px-6 rounded-[4px] font-semibold text-sm leading-4 cursor-pointer ease-in duration-300 hover:bg-[#616363]"} />
-                </div> */}
-                {/* <div>
+                </div>
+                <div>
                     <Link to={'/cesta'}>
                         <div className='flex  justify-center  gap-2 w-[56px] h-[24px] bg-bottom bg-cover bg-no-repeat'>
                             <img className='w-[17.665px] h-[20px]' src={lock} alt="lock" />
@@ -62,6 +61,14 @@ const Navbar = () => {
                         </div>
                     </Link>
                 </div> */}
+
+                {isOpen && (
+                    <div className="lg:hidden">
+                        <NavLink />
+                    </div>
+                )
+
+                }
             </header>
         </>
     )
