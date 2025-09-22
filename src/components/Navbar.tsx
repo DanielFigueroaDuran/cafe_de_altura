@@ -18,24 +18,65 @@ const Navbar = () => {
 
     console.log(itemsQuantity);
 
+    //   <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    //             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    //                 <div className="flex justify-between h-16 items-center">
+    //                     {/* Logo */}
+    //                     <div className="text-xl font-bold text-gray-800">
+    //                         <Link to="/">☕ Coffee Shop</Link>
+    //                     </div>
+
+    //                     {/* Botón hamburguesa (solo en mobile) */}
+    //                     <div className="lg:hidden">
+    //                         <button
+    //                             onClick={() => setIsOpen(!isOpen)}
+    //                             className="text-gray-800 focus:outline-none"
+    //                         >
+    //                             {isOpen ? "✖" : "☰"}
+    //                         </button>
+    //                     </div>
+
+    //                     {/* Links grandes (desktop) */}
+    //                     <div className="hidden lg:flex space-x-6">
+    //                         <Link to="/" className="hover:text-brown-600">Inicio</Link>
+    //                         <Link to="/menu" className="hover:text-brown-600">Menú</Link>
+    //                         <Link to="/about" className="hover:text-brown-600">Nosotros</Link>
+    //                         <Link to="/contact" className="hover:text-brown-600">Contacto</Link>
+    //                     </div>
+    //                 </div>
+    //             </div>
+
+    //             {/* Menu móvil */}
+    //             {isOpen && (
+    //                 <div className="lg:hidden bg-white shadow-md">
+    //                     <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Inicio</Link>
+    //                     <Link to="/menu" className="block px-4 py-2 hover:bg-gray-100">Menú</Link>
+    //                     <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">Nosotros</Link>
+    //                     <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100">Contacto</Link>
+    //                 </div>
+    //             )}
+    //         </nav>
+
     return (
         <>
-            <header className='flex justify-between  items-center py-3 px-10  
-                text-[#fff] bg-[#2b2a2b]  w-full fixed z-[1]' >
-                <Logo />
-
-                <div className="lg:hidden">
-                    <button onClick={() => setIsOpen(!false)}>
-                        {isOpen
-                            ? <IoCloseSharp />
-                            : <HiMenu />
-                        }
-                    </button>
+            <header className='bg-[#2b2a2b] shadow-md fixed w-full top-0 left-0 z-50 py-3 px-10' >
+                <div className='flex justify-between  items-center  
+                text-[#fff]'>
+                    <Logo />
+                    {/* Botón hamburguesa (solo en mobile) */}
+                    <div className="lg:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="text-white focus:outline-none"
+                        >
+                            {isOpen ? <IoCloseSharp /> : <HiMenu />}
+                        </button>
+                    </div>
                 </div>
 
-                <div className='hidden'>
-                    <NavLink />
-                </div>
+
+
+
                 {/* <div className='flex items-center gap-2 my-1 font-semibold text-sm leading-4'>
                     <div className='w-[18px] h-[18px] bg-bottom bg-cover bg-no-repeat '>
                         <img src={phone} alt="phone" />
@@ -64,7 +105,7 @@ const Navbar = () => {
 
                 {isOpen && (
                     <div className="lg:hidden">
-                        <NavLink />
+
                     </div>
                 )
 
