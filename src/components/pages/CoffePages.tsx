@@ -8,12 +8,15 @@
 // import Contact from '../Contact '
 // import Footer from '../Footer'
 
+import SectionHero from "../coffepage/SectionHero"
+
+
 const CoffePages = () => {
     return (
         <>
 
-            {/* <SectionHero />
-            <CardConditions />
+            <SectionHero />
+            {/* <CardConditions />
             <SectionCoffe />
             <FrequentQuestions />
             <SectionImages />
