@@ -66,10 +66,11 @@ const Navbar = () => {
                 {/* Menu móvil */}
                 {isOpen && (
                     <div className="lg:hidden mt-2 bg-[#2b2a2b] text-white shadow-md">
-                        <Link to="/" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Inicio</Link>
-                        <Link to="/menu" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Menú</Link>
-                        <Link to="/about" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Nosotros</Link>
-                        <Link to="/contact" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Contacto</Link>
+                        <Link to="/tienda" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Tienda</Link>
+                        <Link to="#" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Suscripción</Link>
+                        <Link to="#" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Para Empresas</Link>
+                        <Link to="#" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Sobre nosotros</Link>
+                        <Link to="#" className="block px-4 py-2 hover:bg-[#f7f5f31a]">Contacto</Link>
                     </div>
                 )}
             </header>

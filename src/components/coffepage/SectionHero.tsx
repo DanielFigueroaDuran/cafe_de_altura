@@ -5,7 +5,7 @@ const SectionHero = () => {
     return (
 
         <section className='flex justify-center pt-24 pb-12 px-10 gap-2 '>
-            <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2  justify-center  items-center gap-6">
                 <div className="flex flex-col items-start gap-4 w-[588px] ">
                     <h3 className="font-semibold text-[18px] leading-6 text-[#2a5b45]">De la planta a tu taza</h3>
                     <h1 className='font-semibold text-[38px] leading-10 text-[#000000]'>El mejor café del mundo, ahora en tu casa.</h1>
