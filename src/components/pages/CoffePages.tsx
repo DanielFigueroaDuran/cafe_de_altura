@@ -11,6 +11,7 @@
 const CoffePages = () => {
     return (
         <>
+
             {/* <SectionHero />
             <CardConditions />
             <SectionCoffe />

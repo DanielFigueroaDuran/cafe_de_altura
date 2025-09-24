@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/coffepage/Navbar";
 import CoffeProvider from "./context/Context";
+import CoffePages from "./components/pages/CoffePages";
 
 function App() {
 
@@ -8,13 +9,13 @@ function App() {
     <CoffeProvider>
       <BrowserRouter>
         <Navbar />
-        {/* <Routes> */}
-        {/* <Route path="/" element={<CoffePages />} /> */}
-        {/* <Route path='/tienda' element={<Tienda />} />
+        <Routes>
+          <Route path="/" element={<CoffePages />} />
+          {/* <Route path='/tienda' element={<Tienda />} />
                 <Route path='/cesta' element={<Cart />} />
                 <Route path='/checkout' element={<Checkout />} />
                 <Route path='/success' element={<Success />} /> */}
-        {/* </Routes> */}
+        </Routes>
       </BrowserRouter >
 
 

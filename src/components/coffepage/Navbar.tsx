@@ -1,12 +1,12 @@
-import { useCoffe } from '../utils/useCoffe';
+import { useCoffe } from '../../utils/useCoffe';
 import { IoCloseSharp } from "react-icons/io5";
 import { HiMenu } from "react-icons/hi";
 import { Link } from 'react-router-dom';
-import phone from "../assets/icon/Phone.png";
-import lock from "../assets/icon/lock.png";
-import Logo from './Logo';
-import NavLink from './NavLink';
-import Button from './Button';
+import phone from "../../assets/icon/Phone.png";
+import lock from "../../assets/icon/lock.png";
+import Logo from '../Logo';
+import NavLink from '../NavLink';
+import Button from '../Button';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -15,47 +15,6 @@ const Navbar = () => {
     const { cart } = useCoffe();
 
     const itemsQuantity = cart.reduce((acc, coffe) => acc + coffe.quantity, 0);
-
-    console.log(itemsQuantity);
-
-    //   <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-    //             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    //                 <div className="flex justify-between h-16 items-center">
-    //                     {/* Logo */}
-    //                     <div className="text-xl font-bold text-gray-800">
-    //                         <Link to="/">☕ Coffee Shop</Link>
-    //                     </div>
-
-    //                     {/* Botón hamburguesa (solo en mobile) */}
-    //                     <div className="lg:hidden">
-    //                         <button
-    //                             onClick={() => setIsOpen(!isOpen)}
-    //                             className="text-gray-800 focus:outline-none"
-    //                         >
-    //                             {isOpen ? "✖" : "☰"}
-    //                         </button>
-    //                     </div>
-    //---------------------------------------------------------------------------------------------------------
-    //                     {/* Links grandes (desktop) */}
-    //                     <div className="hidden lg:flex space-x-6">
-    //                         <Link to="/" className="hover:text-brown-600">Inicio</Link>
-    //                         <Link to="/menu" className="hover:text-brown-600">Menú</Link>
-    //                         <Link to="/about" className="hover:text-brown-600">Nosotros</Link>
-    //                         <Link to="/contact" className="hover:text-brown-600">Contacto</Link>
-    //                     </div>
-    //                 </div>
-    //             </div>
-
-    //             {/* Menu móvil */}
-    //             {isOpen && (
-    //                 <div className="lg:hidden bg-white shadow-md">
-    //                     <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Inicio</Link>
-    //                     <Link to="/menu" className="block px-4 py-2 hover:bg-gray-100">Menú</Link>
-    //                     <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">Nosotros</Link>
-    //                     <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100">Contacto</Link>
-    //                 </div>
-    //             )}
-    //         </nav>
 
     return (
         <>
