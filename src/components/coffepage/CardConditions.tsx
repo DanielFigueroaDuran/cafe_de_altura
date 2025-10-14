@@ -9,7 +9,7 @@ const CardConditions = () => {
             <h2 className='font-medium text-2xl leading-7 text-[#fff] text-center'>
                 Café con las mejores condiciones
             </h2>
-            <div className="flex flex-col md:flex-wrap lg:flex-row justify-center gap-6">
+            <div className="grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <CardCondicionesComponente
                     className={'flex flex-col text-center items-center p-6 bg-[#fff] gap-4 w-[316px] h-[232px] rounded-lg '}
@@ -20,17 +20,18 @@ const CardConditions = () => {
 
                 <CardCondicionesComponente
                     className={'flex flex-col items-center text-center bg-[#fff] gap-4 w-[316px] rounded-lg p-6'}
+                    img={discounts}
+                    title={'Descuentos y beneficios'}
+                    paragraph={'Cada dos meses, te regalamos una bolsa de un nuevo origen sorpresa, para que lo descubras junto a nosotros.'}
+                />
+
+                <CardCondicionesComponente
+                    className={'flex flex-col md:col-span-2 md:justify-self-center lg:col-span-1 lg:justify-self-auto items-center text-center bg-[#fff] gap-4 w-[316px] rounded-lg p-6'}
                     img={shipping}
                     title={'Envío en 24/48h'}
                     paragraph={'Pide tu café antes de las 12h y lo recibirás al día siguiente.'}
                 />
 
-                <CardCondicionesComponente
-                    className={'flex flex-col items-center text-center bg-[#fff] gap-4 w-[316px] rounded-lg p-6'}
-                    img={discounts}
-                    title={'Descuentos y beneficios'}
-                    paragraph={'Cada dos meses, te regalamos una bolsa de un nuevo origen sorpresa, para que lo descubras junto a nosotros.'}
-                />
             </div>
         </div>
     )

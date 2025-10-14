@@ -1,14 +1,9 @@
 //import { React, useContext, useState } from 'react'
 // import Arrow from "../assets/icon/Arrow.png";
 import Arrow from "../../assets/icon/Arrow.png";
-
-//import Show from './Show';
-//import { CoffeContext } from "./context/Context";
 import Button from '../Button';
-
 import { useCoffe } from "../../context/useCoffe";
 import Show from '../Show';
-
 
 const SectionCoffe = () => {
 
@@ -16,9 +11,9 @@ const SectionCoffe = () => {
 
     return (
         <>
-            <div className="flex flex-col p-4 gap-10 ">
+            <div className="flex flex-col p-4 gap-10">
                 <h2 className="flex justify-center text-[rgb(42,91,69)] font-medium text-xl leading-7 ">Novedades</h2>
-                <div className="flex justify-center gap-6 p-6 ">
+                <div className="grid place-items-center md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
                     {products?.slice(0, 4).map((product, i) => {
                         return (
                             <div className='flex p-6  border border-gray-light rounded-lg
@@ -41,7 +36,7 @@ const SectionCoffe = () => {
                     })}
                 </div>
                 <Show
-                    className={'flex justify-center items-center gap-1 decoration-slate-950 underline'}
+                    className={'flex font-semibold justify-center items-center gap-1 decoration-slate-950 underline'}
                     link={'Tienda'}
                     label={'Ver Todos'}
                     classIcon={'text-[#2a5b45]'}
