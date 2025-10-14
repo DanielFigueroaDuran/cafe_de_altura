@@ -1,10 +1,13 @@
 //import { React, useContext, useState } from 'react'
-//import Arrow from "../assets/icon/Arrow.png";
+// import Arrow from "../assets/icon/Arrow.png";
+import Arrow from "../../assets/icon/Arrow.png";
+
 //import Show from './Show';
 //import { CoffeContext } from "./context/Context";
 import Button from '../Button';
 
 import { useCoffe } from "../../context/useCoffe";
+import Show from '../Show';
 
 
 const SectionCoffe = () => {
@@ -37,12 +40,13 @@ const SectionCoffe = () => {
                         )
                     })}
                 </div>
-                {/* <Show
+                <Show
                     className={'flex justify-center items-center gap-1 decoration-slate-950 underline'}
                     link={'Tienda'}
                     label={'Ver Todos'}
+                    classIcon={'text-[#2a5b45]'}
                     icon={Arrow}
-                /> */}
+                />
             </div>
         </>
     )
