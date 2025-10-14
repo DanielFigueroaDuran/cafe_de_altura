@@ -27,9 +27,8 @@ const SectionHero = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="flex items-center md:pl-10 justify-items-center 
-              md:w-[90%] text-center lg:w-[588px] 
-                rounded-[20px] bg-contain bg-no-repeat">
+                <div className="flex items-center md:pl-20 justify-items-center 
+                        text-center lg:w-[588px] rounded-[20px] bg-contain bg-no-repeat">
                     <img src={coffeePlant} alt="coffeePlant" />
                 </div>
             </div>
