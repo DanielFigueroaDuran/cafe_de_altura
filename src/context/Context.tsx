@@ -1,17 +1,17 @@
 import { createContext, useState, useEffect } from "react";
-import { getlocalStorage, products as initialProduct, type Product } from '../utils/data.ts';
+import { getlocalStorage, products as initialProduct, type ProductType } from '../utils/data.ts';
 
 type CoffeContextType = {
-    products: Product[],
-    setProducts: React.Dispatch<React.SetStateAction<Product[]>>,
-    cart: Product[],
-    setCart: React.Dispatch<React.SetStateAction<Product[]>>,
+    products: ProductType[],
+    setProducts: React.Dispatch<React.SetStateAction<ProductType[]>>,
+    cart: ProductType[],
+    setCart: React.Dispatch<React.SetStateAction<ProductType[]>>,
     selected: string,
     setSelected: React.Dispatch<React.SetStateAction<string>>,
-    productSelected: Product[],
-    setProductSelected: React.Dispatch<React.SetStateAction<Product[]>>
+    productSelected: ProductType[],
+    setProductSelected: React.Dispatch<React.SetStateAction<ProductType[]>>
     isloading: boolean,
-    handleClick: (product: Product) => void,
+    //handleClick: (product: ProductType[]) => void,
     total: number,
     //totalSummry: number
 };
@@ -24,10 +24,10 @@ export const CoffeContext = createContext<CoffeContextType | undefined>(undefine
 //const coffeeProduct = JSON.parse(localStorage.getItem("coffeStorage")) || [];
 
 const CoffeProvider = ({ children }: CoffeProviderProps) => {
-    const [products, setProducts] = useState<Product[]>(initialProduct);
-    const [cart, setCart] = useState<Product[]>(getlocalStorage());
+    const [products, setProducts] = useState<ProductType[]>(initialProduct);
+    const [cart, setCart] = useState<ProductType[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
-    const [productSelected, setProductSelected] = useState<Product[]>([]);
+    const [productSelected, setProductSelected] = useState<ProductType[]>([]);
     //const [totalSummry, setTotalSummry] = useState([]);
     const [isloading, setIsloading] = useState<boolean>(false);
 
@@ -39,7 +39,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
     }, [cart]);
 
 
-    const handleClick = (product: Product) => {
+    const handleClick = (product: ProductType) => {
         setIsloading(true);
 
         setTimeout(() => {
@@ -57,6 +57,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
         };
     }
 
+
     return (
         <CoffeContext.Provider value={
             {
@@ -68,7 +69,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
                 setSelected,
                 productSelected,
                 setProductSelected,
-                handleClick,
+                //handleClick,
                 total,
                 //totalSummry,
                 //setTotalSummry,
@@ -80,6 +81,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
         </CoffeContext.Provider>
     )
 }
+
 
 // export const useBook = () => {
 //     const context = useContext(CoffeContext);

@@ -1,4 +1,3 @@
-import { useCoffe } from '../../utils/useCoffe';
 import { IoCloseSharp } from "react-icons/io5";
 import { HiMenu } from "react-icons/hi";
 import { Link } from 'react-router-dom';
@@ -8,6 +7,7 @@ import Logo from '../Logo';
 import NavLink from '../NavLink';
 import Button from '../Button';
 import { useState } from 'react';
+import { useCoffe } from "../../context/useCoffe";
 
 const Navbar = () => {
 
