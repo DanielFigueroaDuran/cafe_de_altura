@@ -8,6 +8,7 @@
 // import Contact from '../Contact '
 // import Footer from '../Footer'
 
+import CardConditions from "../coffepage/CardConditions"
 import SectionHero from "../coffepage/SectionHero"
 
 
@@ -16,8 +17,8 @@ const CoffePages = () => {
         <>
 
             <SectionHero />
-            {/* <CardConditions />
-            <SectionCoffe />
+            <CardConditions />
+            {/* <SectionCoffe />
             <FrequentQuestions />
             <SectionImages />
             <Contact />

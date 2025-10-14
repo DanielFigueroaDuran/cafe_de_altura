@@ -16,7 +16,7 @@ const SectionHero = () => {
                         hogar.
                     </p>
 
-                    <div className="flex gap-4  border-2 border-black md:ml-40 lg:ml-0">
+                    <div className="flex gap-4 md:ml-40 lg:ml-0">
                         <p className='bg-[#1f1815] text-[#fff] py-3 px-6 rounded'>
                             Descubrir orígenes
                         </p>

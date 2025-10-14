@@ -3,3 +3,8 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+/* ------------------------------------Card-------------------------------------------------- */
+.backgroundCoffe {
+  background-image: url("./assets/img/backgroundCoffe.jpg");
+}
