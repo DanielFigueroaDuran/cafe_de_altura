@@ -9,6 +9,7 @@
 // import Footer from '../Footer'
 
 import CardConditions from "../coffepage/CardConditions"
+import SectionCoffe from "../coffepage/SectionCoffe"
 import SectionHero from "../coffepage/SectionHero"
 
 
@@ -18,8 +19,8 @@ const CoffePages = () => {
 
             <SectionHero />
             <CardConditions />
-            {/* <SectionCoffe />
-            <FrequentQuestions />
+            <SectionCoffe />
+            {/*<FrequentQuestions />
             <SectionImages />
             <Contact />
             <Footer /> */}

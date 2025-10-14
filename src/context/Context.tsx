@@ -11,7 +11,7 @@ type CoffeContextType = {
     productSelected: ProductType[],
     setProductSelected: React.Dispatch<React.SetStateAction<ProductType[]>>
     isloading: boolean,
-    //handleClick: (product: ProductType[]) => void,
+    handleClick: (product: ProductType) => void,
     total: number,
     //totalSummry: number
 };
@@ -69,7 +69,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
                 setSelected,
                 productSelected,
                 setProductSelected,
-                //handleClick,
+                handleClick,
                 total,
                 //totalSummry,
                 //setTotalSummry,
