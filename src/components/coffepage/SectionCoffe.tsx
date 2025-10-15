@@ -36,7 +36,7 @@ const SectionCoffe = () => {
                     })}
                 </div>
                 <Show
-                    className={'flex font-semibold justify-center items-center gap-1 decoration-slate-950 underline'}
+                    className={'flex -mt-10 lg:mt-0 font-semibold justify-center items-center gap-1 decoration-slate-950 underline'}
                     link={'Tienda'}
                     label={'Ver Todos'}
                     classIcon={'text-[#2a5b45]'}
