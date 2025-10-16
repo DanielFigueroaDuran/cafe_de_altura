@@ -1,16 +1,13 @@
 import Icon from "../../assets/icon/Iconpico.png";
 import Arrow from "../../assets/icon/Icon3.png";
-//import Icon2 from "../../assets/icon/Icon2.png";
-//import Show from './Show';
-//import CardQuestions from './CardQuestions';
 import Show from "../Show";
 import CardQuestions from "../CardQuestions";
 
 const FrequentQuestions = () => {
     return (
-        <div className="flex flex-col items-center bg-[#2a5b45] py-12 gap-6 ">
+        <div className="flex flex-col items-center bg-[#2a5b45] py-12 gap-6">
             <h2 className="text-[#fff] font-medium text-2xl leading-7">Preguntas frecuentes</h2>
-            <div className="flex flex-col py-6 px-[306px] gap-4">
+            <div className=" md:w-[90%] flex flex-col justify-center items-center py-6 px-10 gap-4">
                 <CardQuestions
                     title={'¿Cómo hago el pedido?'}
                     img={Icon}

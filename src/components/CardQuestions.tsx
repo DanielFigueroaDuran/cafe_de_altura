@@ -20,9 +20,9 @@ const CardQuestions = ({ title, img, paragraph }: CardQuestionsTypeProps) => {
     return (
         <>
             {!iconpico
-                ? < div onClick={handleClick} className=' w-[668px] cursor-pointer flex flex-col items-start bg-[#fff] gap-4 p-6 rounded-xl ' >
+                ? < div onClick={handleClick} className=' w-full lg:w-[668px] cursor-pointer flex flex-col items-start bg-[#fff] gap-4 p-6 rounded-xl ' >
                     <div className='flex justify-between items-center w-full'>
-                        <h3 className='text-[#2b2a2b] font-semibold text-xl leading-6'>{title}</h3>
+                        <h3 className='text-[#2b2a2b] text-md font-semibold lg:text-xl leading-6'>{title}</h3>
                         <img
                             className="w-3 h-2"
                             src={img}
@@ -30,9 +30,9 @@ const CardQuestions = ({ title, img, paragraph }: CardQuestionsTypeProps) => {
                         />
                     </div>
                 </div >
-                : < div onClick={handleClick} className=' w-[668px] cursor-pointer flex flex-col    items-start    bg-[#fff] gap-4 p-6 rounded-xl ' >
+                : < div onClick={handleClick} className=' w-full lg:w-[668px] cursor-pointer flex flex-col items-start bg-[#fff] gap-4 p-6 rounded-xl'>
                     <div className='flex justify-between items-center w-full'>
-                        <h3 className='text-[#2b2a2b] font-semibold text-xl leading-6'>{title}</h3>
+                        <h3 className='text-[#2b2a2b] font-semibold text-md lg:text-xl leading-6'>{title}</h3>
                         <img
                             className="w-3 h-2"
                             src={Icon2}
@@ -41,7 +41,7 @@ const CardQuestions = ({ title, img, paragraph }: CardQuestionsTypeProps) => {
                     </div>
                     <div className="w-full border border-[#e3ded7]"></div>
                     <div>
-                        <p className='font-normal  text-xs leading-4 text-[#2b2a2b]'>{paragraph}</p>
+                        <p className='font-normal text-xs leading-4 text-[#2b2a2b]'>{paragraph}</p>
                     </div>
                 </div >
             }
