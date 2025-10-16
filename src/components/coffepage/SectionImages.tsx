@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SectionImages = () => {
     return (
         <section className="flex justify-center p-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center lg:items-center lg:w-full justify-between gap-10 border-2 border-black">
+            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center lg:items-center lg:w-full justify-between gap-10">
                 <div className="flex flex-col gap-4 md:w-[457px]">
                     <h2 className="text-[#2a5b45] font-medium text-center text-lg lg:text-left md:text-2xl leading-7">Pruébalo en nuestro coffee shop</h2>
                     <p className="font-normal text-sm leading-4">
