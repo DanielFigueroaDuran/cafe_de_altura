@@ -1,9 +1,10 @@
-import React from 'react'
-import Icon from "../assets/icon/Iconpico.png";
-import Arrow from "../assets/icon/Icon3.png";
-import Icon2 from "../assets/icon/Icon2.png";
-import Show from './Show';
-import CardQuestions from './CardQuestions';
+import Icon from "../../assets/icon/Iconpico.png";
+import Arrow from "../../assets/icon/Icon3.png";
+//import Icon2 from "../../assets/icon/Icon2.png";
+//import Show from './Show';
+//import CardQuestions from './CardQuestions';
+import Show from "../Show";
+import CardQuestions from "../CardQuestions";
 
 const FrequentQuestions = () => {
     return (

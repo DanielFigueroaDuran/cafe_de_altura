@@ -1,11 +1,17 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import Icon2 from "../assets/icon/Icon2.png";
 
+type CardQuestionsTypeProps = {
+    title: string,
+    img: string,
+    paragraph: string
 
-const CardQuestions = ({ className, title, img, paragraph }) => {
+}
+
+const CardQuestions = ({ title, img, paragraph }: CardQuestionsTypeProps) => {
     const [iconpico, setIconpico] = useState(false);
 
-    const handleClick = (event) => {
+    const handleClick = () => {
         !iconpico
             ? setIconpico(true)
             : setIconpico(false);
