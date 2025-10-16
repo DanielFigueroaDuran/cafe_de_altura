@@ -12,6 +12,7 @@ import CardConditions from "../coffepage/CardConditions"
 import FrequentQuestions from "../coffepage/FrequentQuestions"
 import SectionCoffe from "../coffepage/SectionCoffe"
 import SectionHero from "../coffepage/SectionHero"
+import SectionImages from "../coffepage/SectionImages"
 
 
 const CoffePages = () => {
@@ -22,8 +23,8 @@ const CoffePages = () => {
             <CardConditions />
             <SectionCoffe />
             <FrequentQuestions />
-            {/* <SectionImages />
-            <Contact />
+            <SectionImages />
+            {/* <Contact />
             <Footer /> */}
         </>
     )
