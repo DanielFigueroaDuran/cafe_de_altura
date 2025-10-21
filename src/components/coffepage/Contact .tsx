@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Phone from "../../assets/icon/Icont.png";
 import Mail from "../../assets/icon/Mail.png";
+import UserForm from '../UserForm';
 
 const Contact = () => {
     return (
@@ -42,7 +43,7 @@ const Contact = () => {
                 </div>
             </div>
             {/* <!------------------- Formulario----------------- --> */}
-            {/* <UserForm /> */}
+            <UserForm />
         </div>
     )
 }

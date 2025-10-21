@@ -1,14 +1,25 @@
 import { useEffect, useState } from 'react'
-import { getlocalStorageForm } from "../utils/utils.js";
+import { getlocalStorageForm } from "../utils/data.js";
+//import { getlocalStorageForm } from "../utils/utils.js";
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+
+type UserFormData = {
+    userName: string,
+    email: string,
+    password: string,
+    country: string,
+    phone: number,
+    textMessage: string,
+    terms: boolean
+}
 
 const UserForm = () => {
 
     const [userForm, setUserForm] = useState(getlocalStorageForm());
     const { register, handleSubmit, trigger, reset,
         formState: { errors }
-    } = useForm();
+    } = useForm<UserFormData>();
 
     const onSubmit = handleSubmit((data) => {
         setUserForm(data);
@@ -35,7 +46,6 @@ const UserForm = () => {
                         className='w-full h-[34px] border border-[#d1d5db] rounded-md
                          bg-[#fff] text-[#374151] py-[9px] px-[13px] hover:border-[#9b9ea3] focus:outline-[#3f8f6b]'
                         type="text"
-                        name="userName"
                         id="userName"
                         placeholder="Nombre Completo"
                         {...register("userName", {
@@ -70,7 +80,6 @@ const UserForm = () => {
                         className='w-full h-[34px] border border-[#d1d5db] rounded-md
                         bg-[#fff] text-[#374151] py-[9px] px-[13px] hover:border-[#9b9ea3] focus:outline-[#3f8f6b]'
                         type="text"
-                        name="email"
                         id="email"
                         placeholder="Email"
                         {...register("email", {
@@ -100,7 +109,6 @@ const UserForm = () => {
                             className='border-none rounded-none
                          hover:border-[#9b9ea3]   
                             focus:outline-none font-normal text-xs leading-4 text-[#374151] cursor-pointer'
-                            name="country"
                             id="country"
                             {...register("country", {
                                 required: {
@@ -121,7 +129,6 @@ const UserForm = () => {
                         <input
                             className='w-[100%] border-none focus:outline-none '
                             type="tel"
-                            name="phone"
                             id="phone"
                             placeholder="+1 (555) 987-6543"
                             {...register("phone", {
@@ -141,10 +148,9 @@ const UserForm = () => {
                 <textarea
                     className='border border-[#d1d5db] rounded-md pt-3 pr-[277px] pb-[93px] pl-[17px] 
                     hover:border-[#9b9ea3] focus:outline-[#3f8f6b]'
-                    name="textMessage"
                     id="textMessage"
-                    cols="30"
-                    rows="5"
+                    cols={30}
+                    rows={5}
                     placeholder="¿En qué podemos ayudarte?"
                     {...register("textMessage", {
                         required: {
@@ -163,7 +169,6 @@ const UserForm = () => {
                         className='border-none cursor-pointer w-4 h-4 accent-[#2a5b45]'
                         type="checkbox"
                         id="terms"
-                        name="terms"
                         {...register("terms", {
                             required: {
                                 value: true,
