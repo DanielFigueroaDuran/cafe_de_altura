@@ -16,6 +16,7 @@ function App() {
                 <Route path='/checkout' element={<Checkout />} />
                 <Route path='/success' element={<Success />} /> */}
         </Routes>
+        {/* <Footer /> */}
       </BrowserRouter >
 
 
