@@ -5,10 +5,10 @@ import UserForm from '../UserForm';
 
 const Contact = () => {
     return (
-        <div className="flex justify-center gap-6 px-10 bg-[#e3ded7] opacity-90 z-0">
-            <div className="flex flex-col gap-8 justify-center">
-                <div className="flex flex-col justify-start gap-3 ">
-                    <h3 className='font-semibold text-lg leading-6 text-[#111827]'>Entra en contacto con nosotros</h3>
+        <div className="flex flex-col lg:flex-row justify-center gap-6 px-10 bg-[#e3ded7] opacity-90 z-0 border-2 border-red-900">
+            <div className="flex flex-col gap-4 justify-center">
+                <div className="flex flex-col justify-start gap-2 ">
+                    <h3 className='font-semibold text-lg leading-6 text-center md:text-left text-[#111827]'>Entra en contacto con nosotros</h3>
                     <p className='font-normal text-sm leading-4 text-[#6b7280]'>Si tienes dudas, ponte en contacto con nosotros a    través del formulario y te responderemos lo antes   posible.
                     </p>
                 </div>
