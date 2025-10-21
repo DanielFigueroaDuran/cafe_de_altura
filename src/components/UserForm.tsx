@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { getlocalStorageForm } from "../utils/data.js";
-//import { getlocalStorageForm } from "../utils/utils.js";
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
@@ -31,7 +30,7 @@ const UserForm = () => {
     }, [userForm]);
 
     return (
-        <form className='bg-[#fff] py-8 px-12'
+        <form className=' bg-[#fff] py-8 px-4 md:px-12'
             onSubmit={onSubmit}
         >
             <div className="flex flex-col gap-6">
@@ -147,7 +146,8 @@ const UserForm = () => {
                 </div>
                 <textarea
                     className='border border-[#d1d5db] rounded-md pt-3 pr-[277px] pb-[93px] pl-[17px] 
-                    hover:border-[#9b9ea3] focus:outline-[#3f8f6b]'
+                    hover:border-[#9b9ea3] focus:outline-[#3f8f6b] placeholder:text-md placeholder:text-justify
+                    placeholder:w-screen md:placeholder:text-lg'
                     id="textMessage"
                     cols={30}
                     rows={5}
