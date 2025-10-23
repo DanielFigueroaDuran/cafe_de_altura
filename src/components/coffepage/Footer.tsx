@@ -3,6 +3,8 @@ import Coffe from "../../assets/icon/coffee.png";
 import Phone from "../../assets/icon/Phone.png";
 import Email from "../../assets/icon/email2.png";
 import Logo from '../Logo';
+import NavLink from '../NavLink';
+import ButtonContact from '../ButtonContact';
 //import ButtonContact from './ButtonContact';
 //import NavLink from './NavLink';
 //import Logo from './Logo';
@@ -37,7 +39,8 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className='flex gap-40'>
-                            <NavLink direction={"flex-col"} />
+                            {/* <NavLink direction={"flex-col"} /> */}
+                            <NavLink />
                             <div className="p-4">
                                 <ul className="flex flex-col items-start gap-4 font-semibold text-sm leading-4">
                                     <Link to={'#'} ><h4>Política de privacidad</h4></Link>
@@ -49,7 +52,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <Copyright />
+            {/* <Copyright /> */}
         </>
     )
 }
