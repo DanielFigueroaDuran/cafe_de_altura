@@ -21,7 +21,7 @@ const Footer = () => {
                         <Logo />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="flex w-80 flex-col items-start gap-4 border-2 border-white">
+                        <div className="flex w-80 flex-col items-start gap-4">
                             <h3 className='font-semibold text-lg leading-6'>Te ayudamos en</h3>
                             <div className="flex flex-col gap-4">
                                 <Link to="#">
@@ -42,7 +42,7 @@ const Footer = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className='flex justify-evenly lg:-ml-50 border-2 border-white text-center '>
+                        <div className='flex justify-evenly lg:-ml-50 text-center '>
                             <NavLink classStyle='flex flex-col items-start' />
                             <div className="hidden lg:block p-4">
                                 <ul className="flex flex-col items-start gap-4 font-semibold text-sm leading-4">
