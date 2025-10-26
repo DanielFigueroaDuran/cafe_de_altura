@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Coffe from "../../assets/icon/coffee.png";
+//import Coffe from "../../assets/icon/coffee.png";
 import Phone from "../../assets/icon/Phone.png";
 import Email from "../../assets/icon/email2.png";
 import Logo from '../Logo';
