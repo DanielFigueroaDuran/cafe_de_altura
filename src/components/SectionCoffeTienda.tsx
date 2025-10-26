@@ -1,22 +1,24 @@
-import { useContext, useEffect, useState } from 'react'
-import Arrow from "../assets/icon/Arrow.png";
-import Show from './Show';
-import { CoffeContext } from "./context/Context";
+//import { useContext, useEffect, useState } from 'react'
+//import Arrow from "../assets/icon/Arrow.png";
+//import Show from './Show';
+//import { CoffeContext } from "./context/Context";
 import Button from './Button';
+import { useCoffe } from '../context/useCoffe';
 
 const SectionCoffeTienda = () => {
-    const { products, handleClick } = useContext(CoffeContext);
+    // const { products, handleClick } = useContext(CoffeContext);
+    const { products, handleClick } = useCoffe();
 
     return (
         <>
             <div className="flex flex-col pt-24 p-4 gap-10">
                 <h2 className="flex  justify-center text-[rgb(42,91,69)] font-medium text-xl leading-7 ">Últimos orígenes</h2>
-                <div className="grid grid-rows-2 grid-flow-col justify-center gap-6 p-6">
-                    {products?.map((product, i) => {
+                <div className="grid grid-rows-2 md:grid-cols-2 lg:grid-cols-4 justify-center gap-6 p-6">
+                    {products?.map((product) => {
                         return (
-                            <div key={product._id}>
+                            <div key={product.id}>
                                 {product.brand === 'Colombia La Casita'
-                                    ? <div className='flex p-6  border border-gray-light rounded-lg
+                                    ? <div className='flex p-6 border border-gray-light rounded-lg
                             transition-all duration-300 bg-[#F7F5F3]'
                                     >
                                         <div className='flex flex-col items-center gap-6 '>
@@ -35,7 +37,7 @@ const SectionCoffeTienda = () => {
                                     </div>
                                     : <div className='flex p-6  border border-gray-light rounded-lg
                             transition-all duration-300 hover:bg-[#e3ded7]'
-                                        key={product._id}>
+                                        key={product.id}>
                                         <div className='flex flex-col items-center gap-6'>
                                             <img className='' src={product.img_url} alt="coffe" />
                                             <div className='flex flex-col items-center gap-3'>
