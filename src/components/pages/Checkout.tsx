@@ -3,7 +3,7 @@ import { CoffeContext } from "../context/Context";
 import { useForm } from 'react-hook-form';
 //import { DevTool } from "@hookform/devtools";
 import heroicons from "../../assets/icon/heroicons.png";
-import Copyright from '../Copyright'
+import Copyright from '../CopyRight'
 import bizumImg from "../../assets/icon/bizum.png";
 import TotalCart from '../TotalCart';
 

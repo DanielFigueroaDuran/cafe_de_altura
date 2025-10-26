@@ -1,6 +1,6 @@
 import { React, useState, useContext } from 'react'
 import { CoffeContext } from '../context/Context';
-import Copyright from "../Copyright";
+import Copyright from "../CopyRight";
 //import TotalCar from '../TotalCar';
 import CartItem from '../CartItem';
 import TotalCart from '../TotalCart';

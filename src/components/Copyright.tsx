@@ -1,6 +1,5 @@
-import React from 'react'
 
-const Copyright = () => {
+const CopyRight = () => {
     return (
         <div className="flex justify-center items-center h-10
              font-semibold text-sm leading-4 text-[#fff] bg-[#2b2a2b]">
@@ -9,4 +8,4 @@ const Copyright = () => {
     )
 }
 
-export default Copyright
+export default CopyRight
