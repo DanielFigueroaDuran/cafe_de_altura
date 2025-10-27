@@ -8,7 +8,6 @@ import SectionImages from "../coffepage/SectionImages"
 const CoffePages = () => {
     return (
         <>
-
             <SectionHero />
             <CardConditions />
             <SectionCoffe />

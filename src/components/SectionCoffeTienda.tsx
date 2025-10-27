@@ -6,7 +6,6 @@ import Button from './Button';
 import { useCoffe } from '../context/useCoffe';
 
 const SectionCoffeTienda = () => {
-    // const { products, handleClick } = useContext(CoffeContext);
     const { products, handleClick } = useCoffe();
 
     return (
