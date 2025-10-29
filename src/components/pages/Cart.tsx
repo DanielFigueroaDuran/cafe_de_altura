@@ -5,7 +5,7 @@
 //import CartItem from '../CartItem';
 //import TotalCart from '../TotalCart';
 import { useCoffe } from '../../context/useCoffe';
-//import CartItem from '../CartItem';
+import CartItem from '../CartItem';
 
 
 const Cart = () => {
@@ -28,11 +28,7 @@ const Cart = () => {
 
                                         {/* ---------------------------Pintando Los productos seleccionados --------------*/}
                                         <div className='flex flex-col gap-[19px]'>
-                                            {cart.map((product) => (
-                                                console.log({ product }),
-                                                <div key={product.id}></div>
-                                                // <CartItem product={product} key={product.id} />
-                                            ))}
+                                            {cart.map((product) => <CartItem product={product} key={product.id} />)}
                                         </div>
                                     </div>
                                     <h3 className=" font-semibold text-lg leading-6 text-[#000000] py-10 ">Seleccionar envío</h3>
