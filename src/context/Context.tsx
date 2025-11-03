@@ -13,7 +13,8 @@ type CoffeContextType = {
     isloading: boolean,
     handleClick: (product: ProductType) => void,
     total: number,
-    //totalSummry: number
+    totalSummry: number,
+    setTotalSummry: React.Dispatch<React.SetStateAction<number>>
 };
 
 type CoffeProviderProps = {
@@ -28,7 +29,7 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
     const [cart, setCart] = useState<ProductType[]>(getlocalStorage());
     const [selected, setSelected] = useState<string>('free');
     const [productSelected, setProductSelected] = useState<ProductType[]>([]);
-    //const [totalSummry, setTotalSummry] = useState([]);
+    const [totalSummry, setTotalSummry] = useState<number>(0);
     const [isloading, setIsloading] = useState<boolean>(false);
 
     const total = cart.reduce((acc, coffe) => acc + coffe.price * coffe.quantity, 0);
@@ -71,8 +72,8 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
                 setProductSelected,
                 handleClick,
                 total,
-                //totalSummry,
-                //setTotalSummry,
+                totalSummry,
+                setTotalSummry,
                 isloading
             }
         }
@@ -81,14 +82,5 @@ const CoffeProvider = ({ children }: CoffeProviderProps) => {
         </CoffeContext.Provider>
     )
 }
-
-
-// export const useBook = () => {
-//     const context = useContext(CoffeContext);
-//     if (!context) {
-//         throw new Error("CoffeContext debe usarse dentro de un CoffeContext");
-//     }
-//     return context;
-// };
 
 export default CoffeProvider;

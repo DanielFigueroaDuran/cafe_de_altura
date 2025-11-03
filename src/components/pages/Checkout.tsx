@@ -17,7 +17,7 @@ const Checkout = () => {
         formState: { errors }
     } = useForm();
 
-    const formSubmit = (data) => {
+    const formSubmit = () => {
         reset();
     };
 
