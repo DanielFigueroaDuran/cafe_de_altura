@@ -1,15 +1,17 @@
-import { Children, React, useState, useContext } from 'react'
-import { CoffeContext } from "../context/Context";
+import { useState } from 'react'
+
 import { useForm } from 'react-hook-form';
 //import { DevTool } from "@hookform/devtools";
 import heroicons from "../../assets/icon/heroicons.png";
-import Copyright from '../CopyRight'
+
+//import Copyright from '../CopyRight'
 import bizumImg from "../../assets/icon/bizum.png";
 import TotalCart from '../TotalCart';
+import { useCoffe } from '../../context/useCoffe';
 
 
 const Checkout = () => {
-    const { cart, setCart, cartSeleted, setProductSeleted, setTotalSummry, total } = useContext(CoffeContext)
+    const { cart, setCart, setProductSelected, setTotalSummry, total } = useCoffe();
     const [isOption, setIsOption] = useState(false);
     const { register, handleSubmit, trigger, reset,
         formState: { errors }
@@ -20,7 +22,7 @@ const Checkout = () => {
     };
 
     const handleonClick = () => {
-        setProductSeleted(cart);
+        setProductSelected(cart);
         setTotalSummry(total);
         setCart([]);
         localStorage.clear();
