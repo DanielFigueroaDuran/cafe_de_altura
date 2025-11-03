@@ -1,6 +1,7 @@
-//import Minus from "../assets/icon/heroicons-outline_minus-sm.png";
-//import Plus from "../assets/icon/heroicons-outline_plus-sm.png";
+import Minus from "../assets/icon/heroicons-outline_minus-sm.png";
+import Plus from "../assets/icon/heroicons-outline_plus-sm.png";
 import type { ProductType } from "../utils/data";
+import CartCounter from "./CartCounter";
 //import type { ProductType } from "../utils/data";
 //import CartCounter from "./CartCounter";
 //import CartCounter from './CartCounter';
@@ -16,7 +17,7 @@ const CartItem = ({ product }: CartItemTypeProps) => {
         <>
             <div className='flex gap-12'>
                 <div className="flex items-center w-[88px] h-[55.6px] gap-[14px] border-none">
-                    {/* <CartCounter minius={Minus} plus={Plus} product={product} quantity={quantity} key={id} /> */}
+                    <CartCounter minius={Minus} plus={Plus} product={product} quantity={quantity} key={id} />
                 </div>
                 <div className='flex flex-col gap-[19px] ' key={id}>
                     <div className='flex items-center ' >

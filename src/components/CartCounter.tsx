@@ -1,30 +1,40 @@
-import { React, useContext, useState } from 'react'
-import { CoffeContext } from './context/Context';
+import { useCoffe } from '../context/useCoffe';
+import { products, type ProductType } from '../utils/data';
 
-const CartCounter = ({ minius, plus, product }) => {
-    const { cart, setCart, handleClick } = useContext(CoffeContext);
+type CartCounterProps = {
+    minius: string;
+    plus: string;
+    product: ProductType
+    quantity: number
+}
 
-    const handleSubs = (id) => {
-        //console.log(id);
-        const productRepeat = cart.find((coffe) => coffe._id === product._id);
-        const coffeDelete = cart.find((coffe) => coffe._id === id);
-        const newCart = cart.filter((coffe) => {
-            return coffe !== coffeDelete
-        })
-        productRepeat.quantity !== 1
-            ?
-            setCart(cart.map((item) => (item._id === product._id
-                ? { ...product, quantity: productRepeat.quantity - 1 }
-                : item
-            )))
-            : setCart(newCart)
-    }
+const CartCounter = ({ minius, plus, product }: CartCounterProps) => {
+    const { cart, setCart, handleClick } = useCoffe();
+
+    const handleSubs = (id: string) => {
+        const productRepeat = cart.find((coffe) => coffe.id === id);
+        if (!productRepeat) return; // ← si no existe, detenemos la función
+
+        const newCart = cart.filter((coffe) => coffe.id !== id);
+
+        if (productRepeat.quantity !== 1) {
+            setCart(
+                cart.map((item) =>
+                    item.id === id
+                        ? { ...item, quantity: productRepeat.quantity - 1 }
+                        : item
+                )
+            );
+        } else {
+            setCart(newCart);
+        }
+    };
 
     return (
         <>
             <button
                 className="flex items-center w-6 h-6 gap-[14px]"
-                onClick={() => handleSubs(product._id)}
+                onClick={() => handleSubs(product.id)}
             >
                 <img
                     src={minius}
