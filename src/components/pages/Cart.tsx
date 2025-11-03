@@ -6,6 +6,7 @@
 //import TotalCart from '../TotalCart';
 import { useCoffe } from '../../context/useCoffe';
 import CartItem from '../CartItem';
+import TotalCart from '../TotalCart';
 
 
 const Cart = () => {
@@ -81,11 +82,11 @@ const Cart = () => {
                                 </div>
                             </div>
                             {/* <!-- ----------------total de carrito --> */}
-                            {/* <TotalCart
+                            <TotalCart
                                 label={"Ir a checkout"}
                                 route={"/checkout"}
                                 text={"Seguir comprando"}
-                            /> */}
+                            />
                         </div>
                     </div>
                     : (

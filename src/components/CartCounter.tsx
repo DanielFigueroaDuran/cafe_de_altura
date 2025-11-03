@@ -1,12 +1,12 @@
 import { useCoffe } from '../context/useCoffe';
-import { products, type ProductType } from '../utils/data';
+import { type ProductType } from '../utils/data';
 
 type CartCounterProps = {
     minius: string;
     plus: string;
     product: ProductType
     quantity: number
-}
+};
 
 const CartCounter = ({ minius, plus, product }: CartCounterProps) => {
     const { cart, setCart, handleClick } = useCoffe();

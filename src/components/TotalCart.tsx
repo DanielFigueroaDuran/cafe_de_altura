@@ -1,8 +1,15 @@
-import { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { CoffeContext } from "../components/context/Context";
-const TotalCart = ({ handleonClick, label, route, text }) => {
-    const { cart, selected, setSelected, total } = useContext(CoffeContext);
+import { useCoffe } from '../context/useCoffe';
+
+type TotalCartProps = {
+    // handleonClick: () => void,
+    label: string,
+    route: string,
+    text: string
+};
+
+const TotalCart = ({ label, route, text }: TotalCartProps) => {
+    const { selected, total, } = useCoffe();
     const vat = 0.21;
     const totalVat = total * vat;
     return (
@@ -44,7 +51,7 @@ const TotalCart = ({ handleonClick, label, route, text }) => {
                                 {selected === 'free'
                                     ? total.toFixed(2).toString().replace(/\./g, ',')
                                     : selected === 'urgent'
-                                        ? (total + parseInt(9)).toFixed(2).toString().replace(/\./g, ',')
+                                        ? (total + (9)).toFixed(2).toString().replace(/\./g, ',')
                                         : total.toFixed(2).toString().replace(/\./g, ',')
                                 } €</p>
                             <div className="smal">
@@ -52,7 +59,7 @@ const TotalCart = ({ handleonClick, label, route, text }) => {
                                     Incluye {selected === 'free'
                                         ? totalVat.toFixed(2).replace(/\./g, ',')
                                         : selected === 'urgent'
-                                            ? ((total + parseInt(9)) * vat).toFixed(2).replace(/\./g, ',')
+                                            ? ((total + (9)) * vat).toFixed(2).replace(/\./g, ',')
                                             : totalVat.toFixed(2).replace(/\./g, ',')
                                     } € de IVA</small>
                             </div>
@@ -61,7 +68,7 @@ const TotalCart = ({ handleonClick, label, route, text }) => {
                 </div>
                 {/* <!-----------------boton total---------- --> */}
                 <div className="flex gap-4">
-                    <button onClick={handleonClick}>
+                    <button >
                         <Link
                             to={route}
                             className="py-3 px-6 border-none rounded text-[#fff] bg-[#2a5b45] font-semibold
