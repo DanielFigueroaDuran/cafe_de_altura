@@ -6,6 +6,7 @@ import Footer from "./components/coffepage/Footer";
 import Tienda from "./components/pages/Tienda";
 import Cart from "./components/pages/Cart";
 import Checkout from "./components/pages/Checkout";
+import Success from "./components/pages/Success";
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
           <Route path='/tienda' element={<Tienda />} />
           <Route path='/cesta' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
-          {/* <Route path='/success' element={<Success />} /> */}
+          <Route path='/success' element={<Success />} />
         </Routes>
         <Footer />
       </BrowserRouter >

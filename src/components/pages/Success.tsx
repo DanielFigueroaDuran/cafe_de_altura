@@ -1,10 +1,9 @@
-import { React, useContext } from 'react'
-import { CoffeContext } from "../context/Context";
 import { Link } from 'react-router-dom';
 import receive from "../../assets/icon/Illustration.png";
+import { useCoffe } from '../../context/useCoffe';
 
 const Success = () => {
-    const { cart, productSeleted, selected, totalSummry, total } = useContext(CoffeContext);
+    const { productSelected, selected, totalSummry, total } = useCoffe();
     const vat = 0.21;
     const totalVat = totalSummry * vat;
 
@@ -24,9 +23,9 @@ const Success = () => {
             </div>
             <div className='flex flex-col gap-6 p-6  bg-[#F7F5F3] rounded-[10px] w-full'>
                 <h3 className='font-semibold text-lg leading-6 text-[#000000]' >Tu pedido</h3>
-                {productSeleted?.map((coffe, i) => {
+                {productSelected?.map((coffe) => {
                     return (
-                        <div className='flex gap-6 ' key={coffe._id}>
+                        <div className='flex gap-6 ' key={coffe.id}>
                             <div className='w-[55.65974px]'>
                                 <img src={coffe.img_url} alt="coffe" />
                             </div>
@@ -65,7 +64,7 @@ const Success = () => {
                                 {selected === 'free'
                                     ? totalSummry.toFixed(2).toString().replace(/\./g, ',')
                                     : selected === 'urgent'
-                                        ? (totalSummry + parseInt(9)).toFixed(2).toString().replace(/\./g, ',')
+                                        ? (totalSummry + (9)).toFixed(2).toString().replace(/\./g, ',')
                                         : total.toFixed(2).toString().replace(/\./g, ',')
                                 } €
                             </p>
@@ -73,7 +72,7 @@ const Success = () => {
                                 Incluye  {selected === 'free'
                                     ? totalVat.toFixed(2).replace(/\./g, ',')
                                     : selected === 'urgent'
-                                        ? ((totalSummry + parseInt(9)) * vat).toFixed(2).replace(/\./g, ',')
+                                        ? ((totalSummry + (9)) * vat).toFixed(2).replace(/\./g, ',')
                                         : totalVat.toFixed(2).replace(/\./g, ',')
                                 } € de IVA
                             </span>
