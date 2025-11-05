@@ -12,7 +12,7 @@ import { useCoffe } from '../../context/useCoffe';
 
 const Checkout = () => {
     const { cart, setCart, setProductSelected, setTotalSummry, total } = useCoffe();
-    const [isOption, setIsOption] = useState(false);
+    const [isOption, setIsOption] = useState('');
     const { register, handleSubmit, trigger, reset,
         formState: { errors }
     } = useForm();
@@ -65,7 +65,6 @@ const Checkout = () => {
                                         <div className='flex flex-col '>
                                             <label
                                                 htmlFor="accountHolder"
-                                                placeholder=''
                                             >
                                                 <p className='text-[#000000] font-normal text-xs leading-4' >Titular</p>
                                             </label>
@@ -85,7 +84,9 @@ const Checkout = () => {
                                             />
                                         </div>
 
-                                        {<span className='block text-[tomato] text-sm ' >{errors.accountHolde?.message}</span>}
+                                        {<span className='block text-[tomato] text-sm '>
+                                            {typeof errors.accountHolde?.message === "string" && errors.accountHolde.message}
+                                        </span>}
 
                                         <div className='flex flex-col'>
                                             <label className='text-[#000000] font-normal text-xs leading-4'
@@ -109,7 +110,9 @@ const Checkout = () => {
                                             />
                                         </div>
 
-                                        {<span className='block text-[tomato] text-sm ' >{errors.cardNumber?.message}</span>}
+                                        {<span className='block text-[tomato] text-sm ' >
+                                            {typeof errors.cardNumber?.message}
+                                        </span>}
 
                                         <div className="flex gap-6">
                                             <div>
@@ -132,7 +135,7 @@ const Checkout = () => {
                                                     })}
                                                     onBlur={() => trigger("expirationDate")}
                                                 />
-                                                {<span className='block text-[tomato] text-sm ' >{errors.expirationDate?.message}</span>}
+                                                {<span className='block text-[tomato] text-sm ' >{typeof errors.expirationDate?.message}</span>}
                                             </div>
                                             <div>
                                                 <label
@@ -153,7 +156,9 @@ const Checkout = () => {
                                                     })}
                                                     onBlur={() => trigger("cvc")}
                                                 />
-                                                {<span className='block text-[tomato] text-sm ' >{errors.cvc?.message}</span>}
+                                                {<span className='block text-[tomato] text-sm ' >
+                                                    {typeof errors.cvc?.message}
+                                                </span>}
                                             </div>
                                         </div>
                                     </div>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useCoffe } from '../context/useCoffe';
 
 type TotalCartProps = {
-    // handleonClick: () => void,
+    handleonClick?: () => void,
     label: string,
     route: string,
     text: string
