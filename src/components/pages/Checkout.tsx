@@ -111,7 +111,7 @@ const Checkout = () => {
                                         </div>
 
                                         {<span className='block text-[tomato] text-sm ' >
-                                            {typeof errors.cardNumber?.message}
+                                            {errors.cardNumber?.message as string}
                                         </span>}
 
                                         <div className="flex gap-6">
@@ -135,7 +135,9 @@ const Checkout = () => {
                                                     })}
                                                     onBlur={() => trigger("expirationDate")}
                                                 />
-                                                {<span className='block text-[tomato] text-sm ' >{typeof errors.expirationDate?.message}</span>}
+                                                {<span className='block text-[tomato] text-sm ' >
+                                                    {errors.expirationDate?.message as string}
+                                                </span>}
                                             </div>
                                             <div>
                                                 <label
@@ -157,7 +159,7 @@ const Checkout = () => {
                                                     onBlur={() => trigger("cvc")}
                                                 />
                                                 {<span className='block text-[tomato] text-sm ' >
-                                                    {typeof errors.cvc?.message}
+                                                    {typeof errors.cvc?.message === "string" && errors.cvc?.message}
                                                 </span>}
                                             </div>
                                         </div>
@@ -225,7 +227,6 @@ const Checkout = () => {
                             <div className='flex flex-col gap-2 '>
                                 <label className='font-normal text-xs leading-4 text-[#515251]'
                                     htmlFor="firstName"
-                                    placeholder='Nombre'
                                 >
                                     <p className='text-[#000000] font-normal text-xs leading-4'>
                                         Nombre
@@ -246,7 +247,9 @@ const Checkout = () => {
                                 />
                             </div>
 
-                            {<span className='block text-[tomato] text-sm ' >{errors.firstName?.message}</span>}
+                            {<span className='block text-[tomato] text-sm ' >
+                                {typeof errors.firstName?.message === "string" && errors.firstName?.message}
+                            </span>}
 
                             <div className='flex flex-col '>
                                 <label className='font-normal text-xs leading-4'
@@ -270,7 +273,9 @@ const Checkout = () => {
                                 />
                             </div>
 
-                            {<span className='block text-[tomato] text-sm ' >{errors.lastName?.message}</span>}
+                            {<span className='block text-[tomato] text-sm ' >
+                                {typeof errors.lastName?.message === "string" && errors.lastName?.message}
+                            </span>}
                             <div className='flex flex-col '>
                                 <label className=' font-normal text-xs leading-4'
                                     htmlFor="phone"
@@ -293,7 +298,9 @@ const Checkout = () => {
                                     onBlur={() => trigger("phone")}
                                 />
                             </div>
-                            {<span className='block text-[tomato] text-sm ' >{errors.phone?.message}</span>}
+                            {<span className='block text-[tomato] text-sm ' >
+                                {errors.phone?.message as string}
+                            </span>}
                             <div className='flex flex-col '>
                                 <label className='font-normal text-xs leading-4'
                                     htmlFor="email"
@@ -319,13 +326,14 @@ const Checkout = () => {
                                     onBlur={() => trigger("email")}
                                 />
                             </div>
-                            {<span className='block text-[tomato] text-sm ' >{errors.email?.message}</span>}
+                            {<span className='block text-[tomato] text-sm ' >
+                                {typeof errors.email?.message === "string" && errors.email?.message}
+                            </span>}
                             <div className="flex h-[34px] border border-[#d1d5db] rounded-md
                                      bg-[#fff] text-[#374151] py-[9px] px-[13px] hover:border-[#9b9ea3]  focus:outline-[#3f8f6b]">
                                 <input
                                     className='font-normal text-xs leading-4 text-[#515251] w-[100%] border-none focus:outline-none '
                                     type="text"
-                                    name="country"
                                     id="country"
                                     placeholder="Seleccionar"
                                     {...register("country", {
@@ -339,14 +347,15 @@ const Checkout = () => {
                                 <div
                                     className='border-none rounded-none 
                                          hover:border-[#9b9ea3] focus:outline-none font-normal text-xs leading-4 text-[#374151] cursor-pointer'
-                                    name="country"
                                     id="country"
                                 >
                                     <img src={heroicons} alt="heroicons" />
                                 </div>
                             </div>
 
-                            {<span className='block text-[tomato] text-sm ' >{errors.country?.message}</span>}
+                            {<span className='block text-[tomato] text-sm ' >
+                                {typeof errors.country?.message === "string" && errors.country?.message}
+                            </span>}
 
                             <div className="flex  gap-6">
                                 <div className='w-[248.5px]'>
@@ -365,7 +374,9 @@ const Checkout = () => {
                                         })}
                                         onBlur={() => trigger("population")}
                                     />
-                                    {<span className='block text-[tomato] text-sm ' >{errors.population?.message}</span>}
+                                    {<span className='block text-[tomato] text-sm ' >
+                                        {typeof errors.population?.message === "string" && errors.population?.message}
+                                    </span>}
                                 </div>
                                 <div className='w-[248.5px]'>
                                     <p className='text-[#000000] font-normal text-xs leading-4'>CP</p>
@@ -383,7 +394,9 @@ const Checkout = () => {
                                         })}
                                         onBlur={() => trigger("cp")}
                                     />
-                                    {<span className='block text-[tomato] text-sm ' >{errors.cp?.message}</span>}
+                                    {<span className='block text-[tomato] text-sm ' >
+                                        {typeof errors.cp?.message === "string" && errors.cp?.message}
+                                    </span>}
                                 </div>
                             </div>
                             <div className='flex gap-6'>
@@ -403,7 +416,9 @@ const Checkout = () => {
                                         })}
                                         onBlur={() => trigger("street")}
                                     />
-                                    {<span className='block text-[tomato] text-sm ' >{errors.street?.message}</span>}
+                                    {<span className='block text-[tomato] text-sm ' >
+                                        {typeof errors.street?.message === "string" && errors.street?.message}
+                                    </span>}
                                 </div>
                                 <div className='w-[112.25px]'>
                                     <p className='text-[#000000] font-normal text-xs leading-4'>Nº</p>
@@ -421,7 +436,7 @@ const Checkout = () => {
                                         })}
                                         onBlur={() => trigger("number")}
                                     />
-                                    {<span className='block text-[tomato] text-sm ' >{errors.number?.message}</span>}
+                                    {<span className='block text-[tomato] text-sm ' >{errors.number?.message as string}</span>}
                                 </div>
                                 <div className='w-[112.25px]'>
                                     <p className='text-[#000000] font-normal text-xs leading-4'>Piso</p>
@@ -439,7 +454,9 @@ const Checkout = () => {
                                         })}
                                         onBlur={() => trigger("floor")}
                                     />
-                                    {<span className='block text-[tomato] text-sm ' >{errors.floor?.message}</span>}
+                                    {<span className='block text-[tomato] text-sm ' >
+                                        {errors.floor?.message as string}
+                                    </span>}
                                 </div>
                                 <div className='w-[112.25px]'>
                                     <p className='text-[#000000] font-normal text-xs leading-4'>Puerta</p>
@@ -457,7 +474,9 @@ const Checkout = () => {
                                         })}
                                         onBlur={() => trigger("door")}
                                     />
-                                    {<span className='block text-[tomato] text-sm ' >{errors.door?.message}</span>}
+                                    {<span className='block text-[tomato] text-sm ' >
+                                        {errors.door?.message === "string" && errors.door?.message}
+                                    </span>}
                                 </div>
                             </div>
                         </div>
@@ -470,7 +489,7 @@ const Checkout = () => {
                     />
                 </form>
             </div>
-            <Copyright />
+            {/* <Copyright /> */}
         </>
     )
 }

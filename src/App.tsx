@@ -5,6 +5,7 @@ import CoffePages from "./components/pages/CoffePages";
 import Footer from "./components/coffepage/Footer";
 import Tienda from "./components/pages/Tienda";
 import Cart from "./components/pages/Cart";
+import Checkout from "./components/pages/Checkout";
 
 function App() {
 
@@ -16,8 +17,8 @@ function App() {
           <Route path="/" element={<CoffePages />} />
           <Route path='/tienda' element={<Tienda />} />
           <Route path='/cesta' element={<Cart />} />
-          {/*  <Route path='/checkout' element={<Checkout />} />
-                <Route path='/success' element={<Success />} /> */}
+          <Route path='/checkout' element={<Checkout />} />
+          {/* <Route path='/success' element={<Success />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter >

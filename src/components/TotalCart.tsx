@@ -5,7 +5,7 @@ type TotalCartProps = {
     handleonClick?: () => void,
     label: string,
     route: string,
-    text: string
+    text?: string
 };
 
 const TotalCart = ({ label, route, text }: TotalCartProps) => {
