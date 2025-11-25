@@ -17,18 +17,18 @@ const Cart = () => {
         <>
             {
                 cart.length > 0
-                    ? <div className='flex flex-col items-center p-10 min-h-screen'>
+                    ? <div className='flex flex-col items-center p-4 lg:p-10 min-h-screen'>
                         <div className="flex justify-center pt-20 py-10 px-6">
                             <h2 className='font-medium text-2xl leading-7 text-[#2A5B45]'>Cesta({itemsQuantity})</h2>
                         </div>
-                        <div className="flex">
-                            <div className="flex">
+                        <div className="lg:flex border-4 border-blue-900 w-full">
+                            <div className="flex border-2 border-amber-400">
                                 <div className="flex flex-col items-start p-2">
                                     <h3 className="font-semibold text-lg leading-6 text-[#000000]">Productos</h3>
-                                    <div className="flex justify-between py-[15.83px] gap-6">
+                                    <div className="flex justify-between py-4 gap-2 border-2 w-full ">
 
                                         {/* ---------------------------Pintando Los productos seleccionados --------------*/}
-                                        <div className='flex flex-col gap-[19px]'>
+                                        <div className='flex flex-col gap-5 w-full p-2  '>
                                             {cart.map((product) => <CartItem product={product} key={product.id} />)}
                                         </div>
                                     </div>
