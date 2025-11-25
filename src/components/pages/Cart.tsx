@@ -33,7 +33,7 @@ const Cart = () => {
                                         </div>
                                     </div>
                                     <h3 className=" font-semibold text-lg leading-6 text-[#000000] py-10 ">Seleccionar envío</h3>
-                                    <div className="flex justify-between items-baseline  gap-4 w-[776px] py-[10px] px-1">
+                                    <div className="flex justify-between items-baseline gap-4 w-[776px] py-[10px] px-1 border-2 border-green-950">
                                         <div className="flex gap-4">
                                             <div className='flex items-center'>
                                                 <input className="w-6 h-6 bg-[#2A5B45] border-none accent-[#2a5b45]"

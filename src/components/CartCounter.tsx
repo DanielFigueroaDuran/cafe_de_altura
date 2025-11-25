@@ -33,7 +33,7 @@ const CartCounter = ({ minius, plus, product }: CartCounterProps) => {
     return (
         <>
             <button
-                className="flex items-center w-6 h-6 gap-4"
+                className="flex items-center w-6 h-6 gap-4 cursor-pointer"
                 onClick={() => handleSubs(product.id)}
             >
                 <img
@@ -45,7 +45,7 @@ const CartCounter = ({ minius, plus, product }: CartCounterProps) => {
                 <p className='w-6 h-6 text-[#2a5b45] bg-[#2a5b451a] text-center rounded-full'>{product.quantity}</p>
             </span>
             <button
-                className="flex items-center w-6 h-6 gap-4"
+                className="flex items-center w-6 h-6 gap-4 cursor-pointer"
                 onClick={() => handleClick(product)}
             >
                 <img src={plus} alt="plus" />
