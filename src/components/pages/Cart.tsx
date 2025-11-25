@@ -21,11 +21,11 @@ const Cart = () => {
                         <div className="flex justify-center pt-20 py-10 px-6">
                             <h2 className='font-medium text-2xl leading-7 text-[#2A5B45]'>Cesta({itemsQuantity})</h2>
                         </div>
-                        <div className="lg:flex border-4 border-blue-900 w-full">
+                        <div className="lg:flex w-full">
                             <div className="flex border-2 border-amber-400">
                                 <div className="flex flex-col items-start p-2">
                                     <h3 className="font-semibold text-lg leading-6 text-[#000000]">Productos</h3>
-                                    <div className="flex justify-between py-4 gap-2 border-2 w-full ">
+                                    <div className="flex justify-between py-4 gap-2 border-2 w-90  md:w-[90%] lg:w-full ">
 
                                         {/* ---------------------------Pintando Los productos seleccionados --------------*/}
                                         <div className='flex flex-col gap-5 w-full p-2  '>
