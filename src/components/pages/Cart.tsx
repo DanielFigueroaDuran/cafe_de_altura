@@ -33,29 +33,30 @@ const Cart = () => {
                                         </div>
                                     </div>
                                     <h3 className=" font-semibold text-lg leading-6 text-[#000000] py-10 ">Seleccionar envío</h3>
-                                    <div className="flex justify-between items-baseline gap-4 w-[776px] py-[10px] px-1 border-2 border-green-950">
-                                        <div className="flex gap-4">
-                                            <div className='flex items-center'>
+                                    <div className="flex justify-between items-baseline gap-4 w-full py-[10px] px-1 border-2 border-green-950">
+                                        <div className="md:w-[90%] lg:w-full justify-between items-center flex gap-10 border-2 border-red-950">
+                                            <div className='flex gap-3 items-center'>
                                                 <input className="w-6 h-6 bg-[#2A5B45] border-none accent-[#2a5b45]"
                                                     type="radio"
                                                     name='send'
                                                     value="free"
                                                     defaultChecked
                                                     onChange={(e) => setSelected(e.target.value)} />
+
+                                                <div className="flex flex-col gap-1">
+                                                    <p className="text-[#000000] text-sm font-semibold leading-4 ">Envío 5-7 días</p>
+                                                    <p className="text-[#000000] font-semibold text-sm leading-4">
+                                                        Opción estándar sin seguimiento
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div className="flex flex-col gap-1">
-                                                <p className="text-[#000000] text-sm font-semibold leading-4 ">Envío 5-7 días</p>
-                                                <p className="text-[#000000] font-semibold text-sm leading-4">
-                                                    Opción estándar sin seguimiento
-                                                </p>
+                                            <div className="text-[#000000]">
+                                                <h3 className="font-semibold text-lg leading-6">GRATIS</h3>
                                             </div>
-                                        </div>
-                                        <div className="text-[#000000]">
-                                            <h3 className="font-semibold text-lg leading-6">GRATIS</h3>
                                         </div>
                                     </div>
                                     <div className="w-full border border-[#e3ded7]"></div>
-                                    <div className="flex justify-between  items-baseline gap-4 w-[776px] py-[10px] px-1">
+                                    <div className="flex justify-between  items-baseline gap-4 w-[776px] py-[10px] px-1 border-2 border-red-600">
                                         <div className="flex gap-4">
                                             <div className='flex items-center'>
                                                 <input className="w-6 h-6 bg-[#2A5B45] border-none accent-[#2a5b45]"
